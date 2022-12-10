@@ -1,0 +1,503 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-12-03 17:03+0600\n"
+"PO-Revision-Date: 2022-12-03 17:03+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ../includes/widgets\n"
+"X-Poedit-KeywordsList: esc_html__;esc_html_e\n"
+"X-Poedit-SearchPath-0: deen-posts-widget.php\n"
+"X-Poedit-SearchPathExcluded-0: ../../assets\n"
+
+#: deen-posts-widget.php:31
+msgid "Deen Posts"
+msgstr ""
+
+#: deen-posts-widget.php:68 deen-posts-widget.php:1114
+msgid "Layout"
+msgstr ""
+
+#: deen-posts-widget.php:75 deen-posts-widget.php:328 deen-posts-widget.php:665
+#: deen-posts-widget.php:1031 deen-posts-widget.php:1663
+msgid "Title"
+msgstr ""
+
+#: deen-posts-widget.php:77
+msgid "Posts Gallery"
+msgstr ""
+
+#: deen-posts-widget.php:94
+msgid "Skin"
+msgstr ""
+
+#: deen-posts-widget.php:98
+msgid "Standard"
+msgstr ""
+
+#: deen-posts-widget.php:99
+msgid "Carousel"
+msgstr ""
+
+#: deen-posts-widget.php:100
+msgid "Filter Tabs"
+msgstr ""
+
+#: deen-posts-widget.php:108 deen-posts-widget.php:302
+msgid "Image Position"
+msgstr ""
+
+#: deen-posts-widget.php:112 deen-posts-widget.php:313
+msgid "Top"
+msgstr ""
+
+#: deen-posts-widget.php:113 deen-posts-widget.php:310
+#: deen-posts-widget.php:865
+msgid "Left"
+msgstr ""
+
+#: deen-posts-widget.php:114 deen-posts-widget.php:666
+#: deen-posts-widget.php:815 deen-posts-widget.php:913
+msgid "None"
+msgstr ""
+
+#: deen-posts-widget.php:133
+msgid "Columns"
+msgstr ""
+
+#: deen-posts-widget.php:137
+msgid "1"
+msgstr ""
+
+#: deen-posts-widget.php:138
+msgid "2"
+msgstr ""
+
+#: deen-posts-widget.php:139
+msgid "3"
+msgstr ""
+
+#: deen-posts-widget.php:140
+msgid "4"
+msgstr ""
+
+#: deen-posts-widget.php:160
+msgid "Posts Per Page"
+msgstr ""
+
+#: deen-posts-widget.php:194
+msgid "Image Ratio"
+msgstr ""
+
+#: deen-posts-widget.php:232
+msgid "Image Width"
+msgstr ""
+
+#: deen-posts-widget.php:277
+msgid "Image Height"
+msgstr ""
+
+#: deen-posts-widget.php:306
+msgid "Bottom"
+msgstr ""
+
+#: deen-posts-widget.php:307 deen-posts-widget.php:869
+msgid "Center"
+msgstr ""
+
+#: deen-posts-widget.php:308
+msgid "Inherit"
+msgstr ""
+
+#: deen-posts-widget.php:309
+msgid "Initial"
+msgstr ""
+
+#: deen-posts-widget.php:311
+msgid "Revert"
+msgstr ""
+
+#: deen-posts-widget.php:312 deen-posts-widget.php:873
+msgid "Right"
+msgstr ""
+
+#: deen-posts-widget.php:314
+msgid "Unset"
+msgstr ""
+
+#: deen-posts-widget.php:330 deen-posts-widget.php:353
+#: deen-posts-widget.php:401 deen-posts-widget.php:434
+#: deen-posts-widget.php:456 deen-posts-widget.php:574
+#: deen-posts-widget.php:727 deen-posts-widget.php:756
+#: deen-posts-widget.php:924 deen-posts-widget.php:945
+#: deen-posts-widget.php:957
+msgid "Show"
+msgstr ""
+
+#: deen-posts-widget.php:331 deen-posts-widget.php:354
+#: deen-posts-widget.php:402 deen-posts-widget.php:435
+#: deen-posts-widget.php:457 deen-posts-widget.php:575
+#: deen-posts-widget.php:728 deen-posts-widget.php:757
+#: deen-posts-widget.php:925 deen-posts-widget.php:946
+#: deen-posts-widget.php:958
+msgid "Hide"
+msgstr ""
+
+#: deen-posts-widget.php:351 deen-posts-widget.php:1937
+msgid "Excerpt"
+msgstr ""
+
+#: deen-posts-widget.php:373
+msgid "Excerpt Length"
+msgstr ""
+
+#: deen-posts-widget.php:399 deen-posts-widget.php:432
+msgid "Comments"
+msgstr ""
+
+#: deen-posts-widget.php:454
+msgid "Show Meta Icon"
+msgstr ""
+
+#: deen-posts-widget.php:481 deen-posts-widget.php:529
+msgid "Meta Data"
+msgstr ""
+
+#: deen-posts-widget.php:485 deen-posts-widget.php:533
+#: deen-posts-widget.php:661
+msgid "Author"
+msgstr ""
+
+#: deen-posts-widget.php:486 deen-posts-widget.php:534
+#: deen-posts-widget.php:664
+msgid "Date"
+msgstr ""
+
+#: deen-posts-widget.php:506 deen-posts-widget.php:553
+msgid "Separator"
+msgstr ""
+
+#: deen-posts-widget.php:508
+msgid " "
+msgstr ""
+
+#: deen-posts-widget.php:555
+msgid "///"
+msgstr ""
+
+#: deen-posts-widget.php:572 deen-posts-widget.php:2043
+msgid "Button"
+msgstr ""
+
+#: deen-posts-widget.php:599
+msgid "Button Text"
+msgstr ""
+
+#: deen-posts-widget.php:601
+msgid "Read More"
+msgstr ""
+
+#: deen-posts-widget.php:628
+msgid "First Tab Label"
+msgstr ""
+
+#: deen-posts-widget.php:630
+msgid "All"
+msgstr ""
+
+#: deen-posts-widget.php:648
+msgid "Query"
+msgstr ""
+
+#: deen-posts-widget.php:656
+msgid "Order By"
+msgstr ""
+
+#: deen-posts-widget.php:660
+msgid "Count"
+msgstr ""
+
+#: deen-posts-widget.php:662
+msgid "ID"
+msgstr ""
+
+#: deen-posts-widget.php:663
+msgid "Name"
+msgstr ""
+
+#: deen-posts-widget.php:674
+msgid "Get Posts From"
+msgstr ""
+
+#: deen-posts-widget.php:678
+msgid "Categories"
+msgstr ""
+
+#: deen-posts-widget.php:679
+msgid "Tags"
+msgstr ""
+
+#: deen-posts-widget.php:687
+msgid "Select Categories"
+msgstr ""
+
+#: deen-posts-widget.php:706
+msgid "Select Tags"
+msgstr ""
+
+#: deen-posts-widget.php:725 deen-posts-widget.php:754
+#: deen-posts-widget.php:2399
+msgid "Term"
+msgstr ""
+
+#: deen-posts-widget.php:779
+msgid "Order"
+msgstr ""
+
+#: deen-posts-widget.php:783
+msgid "ASC"
+msgstr ""
+
+#: deen-posts-widget.php:784
+msgid "DESC"
+msgstr ""
+
+#: deen-posts-widget.php:794 deen-posts-widget.php:811
+#: deen-posts-widget.php:2498
+msgid "Pagination"
+msgstr ""
+
+#: deen-posts-widget.php:816
+msgid "Previous Next"
+msgstr ""
+
+#: deen-posts-widget.php:817
+msgid "Number + Previous Next"
+msgstr ""
+
+#: deen-posts-widget.php:818
+msgid "Number"
+msgstr ""
+
+#: deen-posts-widget.php:826
+msgid "Previous Label"
+msgstr ""
+
+#: deen-posts-widget.php:828
+msgid "« Previous Post — "
+msgstr ""
+
+#: deen-posts-widget.php:843
+msgid "Next Label"
+msgstr ""
+
+#: deen-posts-widget.php:845
+msgid "Next Post » "
+msgstr ""
+
+#: deen-posts-widget.php:861
+msgid "Alignment"
+msgstr ""
+
+#: deen-posts-widget.php:889
+msgid "Additional Optins"
+msgstr ""
+
+#: deen-posts-widget.php:906
+msgid "Navigation"
+msgstr ""
+
+#: deen-posts-widget.php:910 deen-posts-widget.php:2616
+msgid "Arrow"
+msgstr ""
+
+#: deen-posts-widget.php:911 deen-posts-widget.php:2684
+msgid "Dots"
+msgstr ""
+
+#: deen-posts-widget.php:912
+msgid "Arrow + dots"
+msgstr ""
+
+#: deen-posts-widget.php:922
+msgid "Autoplay"
+msgstr ""
+
+#: deen-posts-widget.php:934
+msgid "Autoplay Speed"
+msgstr ""
+
+#: deen-posts-widget.php:936
+msgid "2000"
+msgstr ""
+
+#: deen-posts-widget.php:943
+msgid "Pause On Hover"
+msgstr ""
+
+#: deen-posts-widget.php:955
+msgid "Infinite Loop"
+msgstr ""
+
+#: deen-posts-widget.php:967
+msgid "Transition Speed(ms)"
+msgstr ""
+
+#: deen-posts-widget.php:976
+msgid "Items On Device"
+msgstr ""
+
+#: deen-posts-widget.php:985
+msgid "Mobile "
+msgstr ""
+
+#: deen-posts-widget.php:994
+msgid "Tablet"
+msgstr ""
+
+#: deen-posts-widget.php:1003
+msgid "Tablet Extra"
+msgstr ""
+
+#: deen-posts-widget.php:1012
+msgid "Laptop"
+msgstr ""
+
+#: deen-posts-widget.php:1020
+msgid "Desktop"
+msgstr ""
+
+#: deen-posts-widget.php:1047 deen-posts-widget.php:1095
+#: deen-posts-widget.php:1672 deen-posts-widget.php:1767
+#: deen-posts-widget.php:1960 deen-posts-widget.php:2071
+#: deen-posts-widget.php:2260 deen-posts-widget.php:2417
+#: deen-posts-widget.php:2552 deen-posts-widget.php:2572
+#: deen-posts-widget.php:2642
+msgid "Color"
+msgstr ""
+
+#: deen-posts-widget.php:1068
+msgid "Tabs"
+msgstr ""
+
+#: deen-posts-widget.php:1084
+msgid "Active Tab Color"
+msgstr ""
+
+#: deen-posts-widget.php:1136 deen-posts-widget.php:1182
+msgid "Column Gap"
+msgstr ""
+
+#: deen-posts-widget.php:1232
+msgid "Row Gap"
+msgstr ""
+
+#: deen-posts-widget.php:1278
+msgid "Box"
+msgstr ""
+
+#: deen-posts-widget.php:1314
+msgid "Border Radius"
+msgstr ""
+
+#: deen-posts-widget.php:1365
+msgid "Gap"
+msgstr ""
+
+#: deen-posts-widget.php:1414 deen-posts-widget.php:2525
+msgid "Normal"
+msgstr ""
+
+#: deen-posts-widget.php:1431 deen-posts-widget.php:1449
+#: deen-posts-widget.php:1525
+msgid "Box Shadow"
+msgstr ""
+
+#: deen-posts-widget.php:1466 deen-posts-widget.php:1541
+msgid "Background Color"
+msgstr ""
+
+#: deen-posts-widget.php:1485
+msgid "Border Color"
+msgstr ""
+
+#: deen-posts-widget.php:1508 deen-posts-widget.php:2546
+msgid "Hover"
+msgstr ""
+
+#: deen-posts-widget.php:1565
+msgid "Image"
+msgstr ""
+
+#: deen-posts-widget.php:1587
+msgid "Image Radius"
+msgstr ""
+
+#: deen-posts-widget.php:1601 deen-posts-widget.php:2587
+#: deen-posts-widget.php:2653
+msgid "Spacing"
+msgstr ""
+
+#: deen-posts-widget.php:1654
+msgid "Content"
+msgstr ""
+
+#: deen-posts-widget.php:1737 deen-posts-widget.php:2007
+#: deen-posts-widget.php:2199 deen-posts-widget.php:2363
+msgid "Padding"
+msgstr ""
+
+#: deen-posts-widget.php:1749
+msgid "Meta"
+msgstr ""
+
+#: deen-posts-widget.php:1792 deen-posts-widget.php:2296
+msgid "Icon Color"
+msgstr ""
+
+#: deen-posts-widget.php:1814
+msgid "Icon Background"
+msgstr ""
+
+#: deen-posts-widget.php:1835
+msgid "Icon Size"
+msgstr ""
+
+#: deen-posts-widget.php:1888
+msgid "Margin"
+msgstr ""
+
+#: deen-posts-widget.php:1910
+msgid "Separator Color"
+msgstr ""
+
+#: deen-posts-widget.php:2103 deen-posts-widget.php:2328
+#: deen-posts-widget.php:2439 deen-posts-widget.php:2632
+msgid "Background"
+msgstr ""
+
+#: deen-posts-widget.php:2232
+msgid "Comment"
+msgstr ""
+
+#: deen-posts-widget.php:2532
+msgid " Color"
+msgstr ""
+
+#: deen-posts-widget.php:2565
+msgid "Active"
+msgstr ""
+
+#: deen-posts-widget.php:2700
+msgid "Dot Active Color"
+msgstr ""
+
+#: deen-posts-widget.php:2906
+msgid "Comments "
+msgstr ""
