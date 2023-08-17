@@ -144,36 +144,14 @@ protected function register_controls() {
 			'tab' => Controls_Manager::TAB_CONTENT,
 		]
 	);
-	$this->add_control(
-		'deen_gallery_post_title',
-		[
-			'label' => esc_html__( 'Title', 'deen-post-layouts-addon' ),
-			'type' =>  Controls_Manager::TEXT,
-			'default' => esc_html__( 'Posts Gallery', 'deen-post-layouts-addon' ),
-			'conditions' => [
-				'terms' => [
-					[
-					   'name' => 'deen_post_style',
-						'operator' => '===',
-						'value' => 'filter-tabs',
-					],
-				],
-			],
-			
-		]
-	);
 
-	$this->add_control(
-		'deen_post_style',
-		[
-			'label' => esc_html__( 'Skin', 'deen-post-layouts-addon' ),
-			'type' => Controls_Manager::SELECT,
-			'default' => 'classic',
-			'options' => [
-				'classic'  => esc_html__( 'Standard', 'deen-post-layouts-addon' ),
-				'filter-tabs' => esc_html__( 'Filter Tabs', 'deen-post-layouts-addon' ),
-			],
-		]
+   $this->add_control(
+			'deen_post_style',
+			[
+				'label' => esc_html__( 'Skin', 'deen-post-layouts-addon' ),
+				'type' =>  Controls_Manager::HIDDEN,
+				'default' => 'classic',
+			]
 	);
 	
 	$this->add_control(
@@ -280,7 +258,6 @@ protected function register_controls() {
 			],
 			'selectors' => [
 				'{{WRAPPER}} a.deen-card-img-top img ' => 'aspect-ratio: 1/{{SIZE}}!important;',
-				'{{WRAPPER}} .deen-gallery-card-img img' => 'aspect-ratio: 1/{{SIZE}}!important;',
 			],
 			'conditions' => [
 				'terms' => [
@@ -428,7 +405,7 @@ protected function register_controls() {
 					[
 						'name' => 'deen_post_style',
 						'operator' => 'in',
-						'value' => ['classic','filter-tabs'],
+						'value' => ['classic'],
 					],
 					[
 						'name' => 'deen_image_position',
@@ -560,7 +537,7 @@ protected function register_controls() {
 					[
 						'name' => 'deen_post_style',
 						'operator' => 'in',
-						'value' => ['classic','filter-tabs'],
+						'value' => ['classic'],
 					],
 					[
 						'name' => 'deen_image_position',
@@ -583,7 +560,7 @@ protected function register_controls() {
 					[
 						'name' => 'deen_post_style',
 						'operator' => 'in',
-						'value' => ['classic','filter-tabs'],
+						'value' => ['classic'],
 					],
 					
 					[
@@ -599,24 +576,6 @@ protected function register_controls() {
 				],
 			],
 		]
-	);
-
-	$this->add_control(
-		'deen_gallery_post_first_tab_label',
-		[
-			'label' => esc_html__( 'First Tab Label', 'deen-post-layouts-addon' ),
-			'type' =>  Controls_Manager::TEXT,
-			'default' => esc_html__( 'All', 'deen-post-layouts-addon' ),
-			'conditions' => [
-        	'terms' => [
-        		[
-        			'name' => 'deen_post_style',
-        			'operator' => 'in',
-        			'value' =>  ['filter-tabs'],
-        		],
-        	],
-        ],
-      ]
 	);
 
 	$this->end_controls_section();
@@ -712,7 +671,7 @@ protected function register_controls() {
 					[
 						'name' => 'deen_post_style',
 						'operator' => 'in',
-						'value' => ['classic','filter-tabs'],
+						'value' => ['classic'],
 					],
 
 					[
@@ -833,104 +792,13 @@ protected function register_controls() {
      
     $this->end_controls_section();
     
-    $this->start_controls_section(
-		'deen_posts_gallery_tabs_title_seciton',
-		[
-			'label' => esc_html__( 'Title', 'deen-post-layouts-addon' ),
-			'tab' => Controls_Manager::TAB_STYLE,
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '==',
-						'value' => 'filter-tabs',
-					],
-				],
-			],
-		]
-	);
-	 $this->add_control(
-        'deen_posts_gallery_tab_heading_color',
-        [
-        	'label' => esc_html__( 'Color', 'deen-post-layouts-addon' ),
-        	'type' => Controls_Manager::COLOR,
-        	'selectors' => [
-        		'{{WRAPPER}} .deen-post-heading span' => 'color: {{VALUE}} !important',
-        	],
-        ]
-     );
-     
-     $this->add_group_control(
-			\Elementor\Group_Control_Typography::get_type(),
-			[
-				'name' => 'deen_posts_gallery_tab_heading_typography',
-				'selector' => '{{WRAPPER}} .deen-post-heading span',
-			]
-	 );
-	
-   $this->end_controls_section();
 
-	$this->start_controls_section(
-		'deen_posts_gallery_tabs',
-		[
-			'label' => esc_html__( 'Tabs', 'deen-post-layouts-addon' ),
-			'tab' => Controls_Manager::TAB_STYLE,
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '==',
-						'value' => 'filter-tabs',
-					],
-				],
-			],
-		]
-	);
-    $this->add_control(
-		'deen_posts_gallery_tab_active_color',
-		[
-			'label' => esc_html__( 'Active Tab Color', 'deen-post-layouts-addon' ),
-			'type' => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} .deen-tab3 button.active' => 'border-bottom: solid {{VALUE}} !important',
-			],
-		]
-	);
-
-    $this->add_control(
-		'deen_posts_gallery_tab_color',
-		[
-			'label' => esc_html__( 'Color', 'deen-post-layouts-addon' ),
-			'type' => Controls_Manager::COLOR,
-			'selectors' => [
-				'{{WRAPPER}} ul.deen-tab3.deen-gallery-post-nav span' => 'color: {{VALUE}} !important',
-			],
-		]
-	);
-	$this->add_group_control(
-		 Group_Control_Typography::get_type(),
-		[
-			'name' => 'deen_posts_gallery_tab_typography',
-			'selector' => '{{WRAPPER}} ul.deen-tab3.deen-gallery-post-nav span',
-		]
-	);
-	$this->end_controls_section();
 
     $this->start_controls_section(
 		'deen_posts_style_section',
 		[
 			'label' => esc_html__( 'Layout', 'deen-post-layouts-addon' ),
 			'tab' => Controls_Manager::TAB_STYLE,
-			'conditions' => [
-				'terms' => [
-			
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					]
-				],
-			],
 		]
 	);
 
@@ -966,65 +834,11 @@ protected function register_controls() {
 						'operator' => '!=',
 						'value' => ['1'],
 					],
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					],
 				],
 			],
 		]
 	);
 	
-	$this->add_responsive_control(
-		'deen_gallery_layout_style_column_gap',
-		[
-			'label' => esc_html__( 'Column Gap', 'deen-post-layouts-addon' ),
-			'type' => Controls_Manager::SLIDER,
-			'size_units' => [ 'px', '%' ],
-			'range' => [
-				'px' => [
-					'min' => 0,
-					'max' => 20,
-					'step' => 1,
-				],
-				'%' => [
-					'min' => 0,
-					'max' => 100,
-				],
-			],
-			'default' => [
-				'unit' => 'px',
-			],
-			'selectors' => [
-				'{{WRAPPER}} .deen-gallery-cards' => 'gap:{{SIZE}}{{UNIT}} !important;',
-			],
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '==',
-						'value' => ['filter-tabs'],
-					],
-					 [
-						'name' => 'deen_image_position',
-						'operator' => '!=',
-						'value' => ['left'],
-					],
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['classic'],
-					],
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					]
-				],
-			],
-		]
-	);
 
 	$this->add_responsive_control(
 		'deen_post_layout_style_row_gap',
@@ -1049,19 +863,9 @@ protected function register_controls() {
 			],
 			'selectors' => [
 				'{{WRAPPER}} .deen-standard-img-post' => 'margin-bottom:{{SIZE}}{{UNIT}} !important;', 
-				'{{WRAPPER}} .deen-gallery-card' => 'margin-bottom:{{SIZE}}{{UNIT}} !important;',
 				'{{WRAPPER}} .deen-card.deen-standard-video' => 'margin-bottom:{{SIZE}}{{UNIT}} !important;',
 			],
-			'conditions' => [
-				'terms' => [
-			
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => 'filter-tabs',
-					]
-				],
-			],
+
 		]
 	);
 	
@@ -1090,7 +894,6 @@ protected function register_controls() {
 			],
 			'selectors' => [
 				'{{WRAPPER}} .deen-standard-img-post' => 'border-style: solid; border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
-				'{{WRAPPER}} .deen-gallery-card' => 'border-style: solid; border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
 			],
 
 		]
@@ -1142,7 +945,6 @@ protected function register_controls() {
 			'selectors' => [
 				'{{WRAPPER}} .deen-standard-img-post' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};', 
 				'{{WRAPPER}} .deen-slide-div-content' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				'{{WRAPPER}} .deen-gallery-card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
 		]
 	);
@@ -1159,15 +961,6 @@ protected function register_controls() {
 				'{{WRAPPER}} .card-inner.deen-left-card' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				'{{WRAPPER}} .card-inner.deen-post-widget' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 			],
-			'conditions' => [
-            'terms' => [
-            	[
-            		'name' => 'deen_post_style',
-            		'operator' => '!=',
-            		'value' => 'filter-tabs',
-            	],
-            ],
-         ],
 
 		]
 	);
@@ -1200,24 +993,6 @@ protected function register_controls() {
 		]
 	);
 
-	$this->add_group_control(
-		Group_Control_Box_Shadow::get_type(),
-		[
-			'name' => 'deen_gallery_post_box_shadwo',
-			'label' => esc_html__( 'Box Shadow', 'deen-post-layouts-addon' ),
-			'selector' => '{{WRAPPER}} .deen-gallery-card',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '==',
-						'value' => ['filter-tabs'],
-					],
-				],
-			],
-		]
-	);
-
     $this->add_control(
 		'deen_post_card_background_color',
 		[
@@ -1236,7 +1011,7 @@ protected function register_controls() {
 	    'type' => Controls_Manager::COLOR, 
 	    'selectors' => [ 
 	    '{{WRAPPER}} .deen-standard-img-post' => 'border-color: {{VALUE}} !important', 
-	    '{{WRAPPER}} .deen-gallery-card' => 'border-color: {{VALUE}}', ], 
+	 ], 
 	]);
 
 	$this->end_controls_tab();
@@ -1264,7 +1039,6 @@ protected function register_controls() {
 			'type' => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} #deen-blog .deen-card:hover' => 'background: {{VALUE}}',
-				'{{WRAPPER}} .deen-gallery-card:hover' => 'background-color: {{VALUE}}',
 			],
 
 		]
@@ -1400,23 +1174,6 @@ protected function register_controls() {
 			],
 		]
 	);
-
-	$this->add_group_control(
-		Group_Control_Typography::get_type(),
-		[
-			'name' => 'deen_posts_gallery_title_typography',
-			'selector' => '{{WRAPPER}} a p',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '==',
-						'value' => 'filter-tabs',
-					],
-				],
-			],
-		]
-	);
 	
 	$this->add_responsive_control(
 			'deen_post_title_spacing',
@@ -1430,21 +1187,13 @@ protected function register_controls() {
 				],
 			]
 	);
+	
 	$this->add_control(
 		'deen_content_meta_style',
 		[
 			'label' => esc_html__( 'Meta', 'deen-post-layouts-addon' ),
 			'type' => Controls_Manager::HEADING,
 			'separator'=>'before',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					],
-				],
-			],
 		]
 	);
 
@@ -1459,15 +1208,6 @@ protected function register_controls() {
 				'{{WRAPPER}} .deen-post-author .span-style a' => 'color: {{VALUE}} !important',
 				'{{WRAPPER}}  div.deen-time span' => 'color: {{VALUE}} !important',
 				'{{WRAPPER}}  span.deen-widget-post-meta a' => 'color: {{VALUE}} !important',
-			],
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					],
-				],
 			],
 
 		]
@@ -1557,15 +1297,6 @@ protected function register_controls() {
 		[
 			'name' => 'deen_posts_meta_typograaphy',
 			'selector' => '{{WRAPPER}} span.deen-widget-post-meta  a',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => 'filter-tabs',
-					],
-				],
-			],
 		]
 	);
 	
@@ -1600,14 +1331,9 @@ protected function register_controls() {
 				'selectors' => [
 					'{{WRAPPER}} span.deen-meta-separator' => 'color: {{VALUE}}',
 				],
-				'default'=>'#ffffff',
+				'default'=>'#292929',
 				'conditions' => [
 	              'terms' => [
-            		[
-            			'name' => 'deen_post_style',
-            			'operator' => '!==',
-            			'value' => 'filter-tabs',
-            		],
             		[
 						'name' => 'deen_image_position',
 						'operator' => '!=',
@@ -1624,15 +1350,6 @@ protected function register_controls() {
 			'label' => esc_html__( 'Excerpt', 'deen-post-layouts-addon' ),
 			'type' => Controls_Manager::HEADING,
 			'separator'=>'before',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					]
-				],
-			],
 		]
 	);
 
@@ -1661,15 +1378,6 @@ protected function register_controls() {
 		[
 			'name' => 'deen_post_excerpt_typography',
 			'selector' => '{{WRAPPER}} p.deen-post-excerpt.mb-25.deen-excerpt',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					]
-				],
-			],
 		]
 	);
 	
@@ -1684,11 +1392,6 @@ protected function register_controls() {
 				],
 				'conditions' => [
 				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => ['filter-tabs'],
-					],
 					[
 						'name' => 'deen_image_position',
 						'operator' => '!=',
@@ -1735,7 +1438,6 @@ protected function register_controls() {
 			'default'=>'#292929',
 			'selectors' => [
 				'{{WRAPPER}} #deen-blog .deen-card .deen-post-footer a' => 'color: {{VALUE}} !important',
-				'{{WRAPPER}} .deen-gallery-content span' => 'color: {{VALUE}} !important',
 			],
 			'conditions' => [
 				'terms' => [
@@ -1761,7 +1463,6 @@ protected function register_controls() {
 			'type' => Controls_Manager::COLOR,
 			'selectors' => [
 				'{{WRAPPER}} button.deen-comment-btn.pl-20.pr-20.read-more' => 'background: {{VALUE}}',
-				'{{WRAPPER}} .deen-gallery-post .deen-comment-btn' => 'background: {{VALUE}}',
 				
 			],
 			'conditions' => [
@@ -1789,38 +1490,6 @@ protected function register_controls() {
 			'conditions' => [
 				'terms' => [
 					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => 'filter-tabs',
-					],
-					[
-						'name' => 'deen_image_position',
-						'operator' => '!=',
-						'value' => 'left',
-					],
-					[
-						'name' => 'deen_show_read_more_btn',
-						'operator' => '==',
-						'value' => 'yes',
-					],
-				],
-			],
-		]
-	);
-	
-	$this->add_group_control(
-		Group_Control_Typography::get_type(),
-		[
-			'name' => 'deen_galler_posts_read_more_typography',
-			'selector' => '{{WRAPPER}} .deen-gallery-content span',
-			'conditions' => [
-				'terms' => [
-					[
-						'name' => 'deen_post_style',
-						'operator' => '!=',
-						'value' => 'classic',
-					],
-					[
 						'name' => 'deen_image_position',
 						'operator' => '!=',
 						'value' => 'left',
@@ -1843,7 +1512,6 @@ protected function register_controls() {
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
 				 '{{WRAPPER}} .deen-comment-btn.read-more' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
-				 '{{WRAPPER}} .deen-gallery-post .deen-comment-btn' => 'padding:{{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}} !important;',
 				 
 				],
 				'conditions' => [
@@ -1898,11 +1566,6 @@ protected function register_controls() {
 			'conditions' => [
             'terms' => [
             	[
-            		'name' => 'deen_post_style',
-            		'operator' => '!==',
-            		'value' => 'filter-tabs',
-            	],
-            	[
 					'name' => 'deen_image_position',
 					'operator' => '!==',
 					'value' => 'left',
@@ -1955,11 +1618,6 @@ protected function register_controls() {
 			'conditions' => [
             'terms' => [
             	[
-            		'name' => 'deen_post_style',
-            		'operator' => '!==',
-            		'value' => 'filter-tabs',
-            	],
-            	[
 					'name' => 'deen_image_position',
 					'operator' => '!==',
 					'value' => 'left',
@@ -1985,11 +1643,6 @@ protected function register_controls() {
 				],
 				'conditions' => [
             'terms' => [
-            	[
-            		'name' => 'deen_post_style',
-            		'operator' => '!==',
-            		'value' => 'filter-tabs',
-            	],
             	[
 					'name' => 'deen_image_position',
 					'operator' => '!==',
@@ -2031,7 +1684,6 @@ protected function register_controls() {
 			'selectors' => [
 				'{{WRAPPER}} button.deen-primary-btn a' => 'color: {{VALUE}} !important',
 				'{{WRAPPER}} button.deen-primary-btn.mb-15 a' => 'color: {{VALUE}} !important',
-				'{{WRAPPER}} .deen-gallery-content a button.deen-primary-btn' => 'color: {{VALUE}} !important'
 			],
 			'conditions' => [
 				'terms' => [
@@ -2217,7 +1869,7 @@ protected function render() {
  $settings = $this->get_settings_for_display();
  $prevText = $settings['deen_pagination_prev_title'];
  $nextText = $settings['deen_pagination_next_title'];
- if('classic' == $settings['deen_post_style']){ 
+ if('classic' == $settings['deen_post_style']) { 
 ?>
 <section id="deen-blog" class="deen-ft-posts">  
     <div class="deen-posts">
@@ -2225,22 +1877,22 @@ protected function render() {
             <div class="deen-left-area <?php echo (esc_attr($settings['deen_image_position']) == "left") ? 'left-position' : ''; ?> <?php echo esc_attr($settings['deen_post_standard_columns']) == "1" ? 'column-1' : '' ?>" >
                 <?php
 				   $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-				   if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-				   $args = array(
-				   'posts_per_page' => $settings['deen_post_per_page'],
-				   'order'=> $settings['deen_post_qeury_order'],
-				   'orderby'=> $settings['deen_post_qeury_order_by'],
-				   'cat'=> $settings['deen_query_using_cat_name'],
-				   'paged'=>$paged,
-				   );
-				   }elseif($settings['deen_gallery_post_tab_get_from'] == 'tag'){
-				    $args = array(
-				   'posts_per_page' => $settings['deen_post_per_page'],
-				   'order'=> $settings['deen_post_qeury_order'],
-				   'orderby'=> $settings['deen_post_qeury_order_by'],
-				   'tag__in'=> $settings['deen_query_using_tag_name'],
-				   'paged'=>$paged,
-				   );
+				   if($settings['deen_gallery_post_tab_get_from'] == 'cat')	{
+					$args = array(
+						'posts_per_page' => $settings['deen_post_per_page'],
+						'order'=> $settings['deen_post_qeury_order'],
+						'orderby'=> $settings['deen_post_qeury_order_by'],
+						'cat'=> $settings['deen_query_using_cat_name'],
+						'paged'=>$paged,
+					);
+				   } elseif( $settings['deen_gallery_post_tab_get_from'] == 'tag' ) {
+						$args = array(
+							'posts_per_page' => $settings['deen_post_per_page'],
+							'order'=> $settings['deen_post_qeury_order'],
+							'orderby'=> $settings['deen_post_qeury_order_by'],
+							'tag__in'=> $settings['deen_query_using_tag_name'],
+							'paged'=>$paged,
+						);
 				   }
 				   $query = new WP_query($args);
 			       while ( $query->have_posts() ) {
@@ -2251,27 +1903,27 @@ protected function render() {
 				   $thumbnail_html = Group_Control_Image_Size::get_attachment_image_html( $settings, 'thumbnails' );
 				?>
                 <div class="deen-card <?php echo ( esc_attr(get_post_format()) == 'video' && 'none' != esc_attr($settings['deen_image_position']) ) ? 'deen-standard-video' : 'deen-standard-img-post' ;  ?>"> 
-                    <div class="deen-post-img <?php echo ( esc_attr($settings['deen_image_position']) == 'left' ) ? 'deen-left-img' : ''; ?>">
+				<div class="deen-post-img <?php echo ( esc_attr($settings['deen_image_position']) == 'left' ) ? 'deen-left-img' : ''; ?>">
                         <?php 
 						 if(!has_post_thumbnail()){
 					    ?>
-                        <a href="<?php esc_url(the_permalink()); ?>"
-                            class="deen-card-img-top <?php echo ( esc_attr($settings['deen_image_position'] ) == 'none') ? 'deen-thumbnail-display' : '' ;  ?>">
-							<img src="<?php echo esc_url( plugins_url( '../../assets/img/placeholder.png', __FILE__ )) ; ?>" alt="default-image">
-                        </a>
+							<a href="<?php esc_url(the_permalink()); ?>"
+								class="deen-card-img-top <?php echo ( esc_attr($settings['deen_image_position'] ) == 'none') ? 'deen-thumbnail-display' : '' ;  ?>">
+								<img src="<?php echo esc_url( plugins_url( '../../assets/img/placeholder.png', __FILE__ )) ; ?>" alt="default-image">
+							</a>
                         <?php
 						 }else{
 						 ?>
-                        <a href="<?php esc_url(the_permalink()); ?>"
-                            class="deen-card-img-top <?php  echo ( esc_attr($settings['deen_image_position'] == 'none' )) ? 'deen-thumbnail-display' : '' ; ?>">
-                            <?php echo wp_kses($thumbnail_html, $this->deen_allowed_tags()); ?> 
-                        </a>
+							<a href="<?php esc_url(the_permalink()); ?>"
+								class="deen-card-img-top <?php  echo ( esc_attr($settings['deen_image_position'] == 'none' )) ? 'deen-thumbnail-display' : '' ; ?>">
+								<?php echo wp_kses($thumbnail_html, $this->deen_allowed_tags()); ?> 
+							</a>
                         <?php
-						 if( get_post_format() == 'video' && 'none'!= $settings['deen_image_position']){
+						 if( get_post_format() == 'video' && 'none'!= $settings['deen_image_position']) {
 						?>
-						<a href="<?php the_permalink(); ?>" class="play-img popup-youtube">
-						<img src="<?php echo esc_url( plugins_url( '../../assets/img/video.png', __FILE__ )) ; ?>" alt="">
-						</a>
+							<a href="<?php the_permalink(); ?>" class="play-img popup-youtube">
+								<img src="<?php echo esc_url( plugins_url( '../../assets/img/video.png', __FILE__ )) ; ?>" alt="">
+							</a>
 						<?php
 						 }
 						?>
@@ -2279,60 +1931,62 @@ protected function render() {
 						 }
 						?>
                         <?php 
-                            if( isset($settings['deen_query_using_cat_name'])){
+                            if( isset($settings['deen_query_using_cat_name']) ) {
 						     $categories = get_the_category();
 							 $cat_ids = $settings['deen_query_using_cat_name'];
                              $user_given_categories = array();
-                             if($cat_ids != ""){
-                             foreach($cat_ids as $cat_id){
-                                 array_push($user_given_categories,get_cat_name($cat_id));
-                             }
+                             if( $cat_ids != "" ) {
+								foreach($cat_ids as $cat_id) {
+									array_push($user_given_categories,get_cat_name($cat_id));
+								}
                              }
                              $post_categories = array();
-                             foreach($categories as $category){
-                                 array_push($post_categories, $category->name);
+                             foreach($categories as $category) {
+                                array_push($post_categories, $category->name);
                              }
-                            $results = array_intersect($user_given_categories , $post_categories);
-                            }elseif(isset($settings['deen_query_using_tag_name'])){
+                            $categoreis_collection = array_intersect($user_given_categories , $post_categories);
+                            }elseif( isset($settings['deen_query_using_tag_name']) ) {
                             $tags = get_the_tags();
                             $tag_ids = $settings['deen_query_using_tag_name'] ?? "";
                             $user_given_tags = array();
-                            foreach($tag_ids as $tag_id){
+                            foreach( $tag_ids as $tag_id ) {
                               array_push($user_given_tags, get_tag($tag_id)->name);
                             }
-                             $post_tags = array();
-                             foreach( $tags as $tag){
-                                 array_push($post_tags, $tag->name );
-                             }
-                            $tags_results = array_intersect($user_given_tags , $post_tags);
+                            $post_tags = array();
+							foreach( $tags as $tag) {
+								array_push($post_tags, $tag->name );
+							}
+                            $tags_collection = array_intersect( $user_given_tags , $post_tags );
                             }
 						?>
-                            <?php if( $settings['deen_image_position'] != 'left' && ( !empty($settings['deen_query_using_cat_name']) ||  !empty($settings['deen_query_using_tag_name'])  )){ ?>
-                            <?php if($settings['deen_show_tag'] == 'yes'  && $settings['deen_image_position'] != 'left'){ ?>
+						<?php if( $settings['deen_image_position'] != 'left' && ( !empty($settings['deen_query_using_cat_name']) ||  !empty($settings['deen_query_using_tag_name'])  )){ ?>
+                            <?php
+								if($settings['deen_show_tag'] == 'yes'  && $settings['deen_image_position'] != 'left' ) {
+							?>
                             <button  class="deen-primary-btn <?php echo ( esc_attr($settings['deen_image_position']) != 'none' && esc_attr($settings['deen_image_position']) != 'left' ) ?  'deen-post-category' : 'deen-no-img-cat' ; ?>">
                               <?php
-                               if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-                                 $category_list = array();
-                                	foreach ( $results as $result ) {
-                                		array_push($category_list, '<a href="' . esc_url(get_category_link(get_cat_ID($result))) . '">' . $result  . '</a> ');
-                                	}
-                                  echo wp_kses(implode( ', ', $category_list ), $this->deen_allowed_tags()); 
-                              }elseif($settings['deen_gallery_post_tab_get_from'] == 'tag'){
-                                  $tag_list = array();
-                                	foreach ( $tags_results as $result ) {
-                                	    $tag = get_term_by('name', $result, 'post_tag');
-                                		array_push($tag_list, '<a href="' . esc_url(get_tag_link($tag->term_id)) . '">' . $result  . '</a> ');
-                                	}
-                                  echo wp_kses(implode( ', ', $tag_list ), $this->deen_allowed_tags());  
+                               if( $settings['deen_gallery_post_tab_get_from'] == 'cat' ) {
+								$category_lists = array();
+								foreach ( $categoreis_collection as $single_category ) {
+									array_push($category_lists, '<a href="' . esc_url(get_category_link(get_cat_ID($single_category))) . '">' . $single_category  . '</a> ');
+								}
+								echo wp_kses(implode( ', ', $category_lists ), $this->deen_allowed_tags()); 
+                              }elseif( $settings['deen_gallery_post_tab_get_from'] == 'tag' ) {
+                                $tag_list = array();
+								foreach ( $tags_collection as $single_tag ) {
+									$tag = get_term_by('name', $single_tag, 'post_tag');
+									array_push($tag_list, '<a href="' . esc_url(get_tag_link($tag->term_id)) . '">' . $single_tag  . '</a> ');
+								}
+                                echo wp_kses(implode( ', ', $tag_list ), $this->deen_allowed_tags());  
                               }
                               ?>
                             </button>
                             <?php
-                            }
+                            	}
                             ?>
                             <?php
-							}else{
-							 if($settings['deen_show_tag'] == 'yes' && $settings['deen_image_position'] != 'left'){
+							}else {
+							 if( $settings['deen_show_tag'] == 'yes' && $settings['deen_image_position'] != 'left' ) {
 							?>
 							  <button class="deen-primary-btn  <?php echo ( esc_attr($settings['deen_image_position']) != 'none' && esc_attr($settings['deen_image_position']) != 'left') ?  'deen-post-category' : 'deen-no-img-cat' ; ?>">
 							     <?php the_category(' , '); ?> 
@@ -2340,59 +1994,69 @@ protected function render() {
 							<?php
 							 }
 							}
-							?>
-                            
+							?> 
                     </div>
 
                     <div class="card-inner deen-post-widget <?php echo ( esc_attr($settings['deen_image_position'] ) == 'left') ? 'deen-left-card' : ' '; ?>">
-                        <?php if ( 'yes' == $settings['deen_show_title'] ){ ?>
+                        <?php 
+							if ( 'yes' == $settings['deen_show_title'] ) { 
+						?>
                         <h4 class="deen-post-title">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h4>
-                        <?php } ?>
+                        <?php
+					 		} 
+					 	?>
                         <?php
 						  if($settings['deen_show_post_meta']){
 						?>
                         <div class="deen-post-author deen-post-widget <?php echo (esc_attr($settings['deen_image_position']) == 'left') ?  'deen-left-post-author' : ' '; ?>">
                             <?php
-							 foreach( $settings['deen_show_post_meta'] as $item){
+							 foreach( $settings['deen_show_post_meta'] as $item) {
 							?>
                             <?php
-							 if($item == "author"){
+							 if($item == "author") {
 							?>
                             <div class="deen-author">
-                                
-                                <?php if('yes' == $settings['deen_show_meta_icon']){ ?>
-                                <span class="deen-icon-bg">
-                                  <i class="far fa-user"></i>
-                                </span>&nbsp;
-                                <?php } ?>
+                                <?php 
+									if('yes' == $settings['deen_show_meta_icon']) { 
+								?>
+									<span class="deen-icon-bg">
+									<i class="far fa-user"></i>
+									</span>&nbsp;
+                                <?php
+							 		} 
+							 	?>
                                 <span class="deen-widget-post-meta">
 								 <?php the_author_posts_link();?> 
 								</span>
                             </div>
                              <span class="deen-meta-separator">
                               <?php 
-								 if(end($settings['deen_show_post_meta']) != $item ){
+								 if(end($settings['deen_show_post_meta']) != $item ) {
 									echo esc_html($settings['deen_meta_separator_classic']);	
 								  }
 							  ?>
 							 </span>
                             <?php
-							 }elseif($item == "date"){
+							 }elseif( $item == "date" ) {
 							?>
                             <div class="deen-date">
-                                <?php if('yes' == $settings['deen_show_meta_icon']){ ?>
+                                <?php
+								 if('yes' == $settings['deen_show_meta_icon']) { 
+								?>
                                 <span class="deen-icon-bg">
                                   <i class="far fa-clock"></i>
                                 </span>&nbsp;
-                                <?php } ?>
+                                <?php 
+								} 
+								?>
 								<span class="deen-widget-post-meta">
 								<a href="#">
-								<?php
-								 echo esc_html(get_the_date('F j, Y'));
-								 ?>
-								 </a>
+									<?php
+										echo esc_html(get_the_date('F j, Y'));
+									?>
+								</a>
 							    </span>
                             </div>
                             <?php
@@ -2401,22 +2065,34 @@ protected function render() {
 							<?php
 							 }
 							?>
-							<?php if('yes' == $settings['deen_show_comments_number_column_one']){ ?> 
+							<?php 
+								if( 'yes' == $settings['deen_show_comments_number_column_one'] ) { 
+							?> 
 							<div class="deen-comment">
-							      <?php if('yes' == $settings['deen_show_meta_icon']){ ?>
+							      <?php 
+								  	if('yes' == $settings['deen_show_meta_icon']) { 
+								  ?>
                                     <span class="deen-icon-bg">
                                         <i class="fas fa-comment-dots"></i>
                                     </span>&nbsp;
-                                  <?php } ?>
-                                    <span class="deen-widget-post-meta"><a href="#"><?php echo __('Comments ', 'deen-post-layouts-addon').esc_html(get_comments_number()) ; ?></a></span>
+                                  <?php
+									} 
+								  ?>
+                                    <span class="deen-widget-post-meta">
+										<a href="#">
+											<?php echo __('Comments ', 'deen-post-layouts-addon').esc_html(get_comments_number()) ; ?>
+										</a>
+									</span>
                             </div>
-                            <?php } ?>
+                            <?php
+								} 
+							?>
                         </div>
                         <?php
 					     } 
-					     ?>
+					    ?>
                         <?php
-						 if ( 'yes' == $settings['deen_show_excerpt'] ){
+						 if ( 'yes' == $settings['deen_show_excerpt'] ) {
 						?>
                         <p class="deen-post-excerpt mb-25 deen-excerpt">
                             <?php echo wp_trim_words(get_the_excerpt(), esc_html($settings['deen_show_excerpt_length']) ); ?>
@@ -2427,24 +2103,29 @@ protected function render() {
                        
                         <div class="deen-post-footer  deen-addon-btn <?php echo ( esc_attr($settings['deen_image_position']) == 'left' ) ? 'deen-left-post-footer' : ''; ?> <?php echo ( esc_attr($settings['deen_image_position']) == 'none') ? 'deen-none-post-footer' : ''; ?>">
                             <?php
-							 if( 'yes' == $settings['deen_show_comments_number'] && 'left' != $settings['deen_image_position']){
+							 if( 'yes' == $settings['deen_show_comments_number'] && 'left' != $settings['deen_image_position']) {
                             ?>
                             <button class="deen-comment-btn pl-20 pr-20 deen-comment">
                                 <i class="fas fa-comment-dots danger-text"></i>
-                                <span class="span-style "><?php  echo esc_html(get_comments_number()); ?></span>
+                                <span class="span-style ">
+									<?php  echo esc_html(get_comments_number()); ?>
+								</span>
                             </button>
                             <?php 
 							  }
 							?>
                             <?php
-							 if(  'yes' == $settings['deen_show_read_more_btn'] && 'left' != $settings['deen_image_position']){
+							 if(  'yes' == $settings['deen_show_read_more_btn'] && 'left' != $settings['deen_image_position']) {
 							?>
 							 <button class="deen-comment-btn pl-20 pr-20 read-more">
-							 <a href="<?php the_permalink(); ?>"><?php echo esc_html($settings['deen_read_more_btn_title']); ?></a>
+							 	<a href="<?php the_permalink(); ?>">
+									<?php echo esc_html($settings['deen_read_more_btn_title']); ?>
+								</a>
                              </button>
-                            <?php } ?>
+                            <?php
+							} 
+							?>
                         </div>
-
                     </div>
                 </div>
                 <?php
@@ -2496,392 +2177,6 @@ protected function render() {
 </section>
 
 <?php
- }elseif($settings['deen_post_style'] == "filter-tabs"){
- ?>
- <div class="deen-gallery-post card-inner">
-								<div class="deen-gallery-container">
-									<div class="deen-gallery-header">
-										<h3 class="deen-post-heading"><span><?php echo esc_html($settings['deen_gallery_post_title']); ?></span> </h3>
-
-										<div class="deen-gallery-nav">
-											<ul class="deen-tab3 deen-gallery-post-nav">
-											<li class=""><button class="tablinks3 active" onclick="deenAddonTabSection2(event, 'All')" id="defaultOpen3"><span>
-											<?php echo esc_html($settings['deen_gallery_post_first_tab_label']); ?></span></button>
-											</li>
-												<?php
-												 if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-												 $gallery_navs = $settings['deen_query_using_cat_name'];
-												 }else{
-												 $gallery_navs = $settings['deen_query_using_tag_name'];
-												 }
-												 if($gallery_navs != ""){
-												 foreach($gallery_navs as $gallery_nav){
-												?>
-												<li class=""><button class="tablinks3" onclick="deenAddonTabSection2(event, '<?php  echo esc_attr($gallery_nav); ?>')" id="defaultOpen3"><span>
-															<?php echo esc_html(get_term($gallery_nav)->name) ?? ''; ?></span></button>
-												</li>
-												<?php
-												 }
-												 }
-												?>
-                                                 
-											</ul>
-										</div>
-									</div>
-
-									<div id="All" class="deen-tabcontent3" style="display: block;">
-										<div class="deen-gallery-cards ">
-                                                 <?php
-												    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-												    if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-												    $args = array(
-													'posts_per_page' => $settings['deen_post_per_page'],
-													'order'=> $settings['deen_post_qeury_order'],
-													'orderby'=> $settings['deen_post_qeury_order_by'],
-													'cat'=> $settings['deen_query_using_cat_name'],
-													'paged'=>$paged
-													);
-													}else{
-												    $args = array(
-													'posts_per_page' => $settings['deen_post_per_page'],
-													'order'=> $settings['deen_post_qeury_order'],
-													'orderby'=> $settings['deen_post_qeury_order_by'],
-													'tag__in'=> $settings['deen_query_using_tag_name'],
-													'paged'=>$paged,
-													);
-													}
-													$query = new WP_query($args);
-													while ( $query->have_posts() ) {
-													$query->the_post();
-													if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-													$categories = get_the_category();
-						                            $category =  $categories[mt_rand(0,count($categories)-1)];
-						                            $catlink = get_category_link($category);
-                                                    }else{
-													$tags = get_the_tags();
-													$tag = $tags ?  $tags[mt_rand(0, count($tags)-1)] : '' ;
-													$taglink = get_tag_link($tag);
-                                                    }
-												 ?>
-												
-												<div class="deen-gallery-card ">
-												<div class="deen-card-container">
-													<div class="deen-gallery-card-img">
-													<?php
-														if(!has_post_thumbnail()){
-														?>
-														<img src="<?php echo esc_url( plugins_url( '../../assets/img/placeholder.png', __FILE__ )) ; ?>" alt="Gallery Image">
-														<?php
-														}else{
-														 the_post_thumbnail();
-														}
-														?>
-													</div>
-													<div class="deen-gallery-content">
-													    <?php if("yes" == $settings['deen_show_tag']){ ?>
-														<?php if($settings['deen_gallery_post_tab_get_from'] == 'cat' && $category){ ?>
-														<a href="<?php echo esc_url($catlink); ?>"><button class="deen-primary-btn"> <?php echo esc_html($category->name); ?></button></a>
-														<?php 
-														}else{
-														if($tag){
-														?>
-														<a href="<?php echo esc_url($taglink); ?>"><button class="deen-primary-btn"> <?php echo esc_html($tag->name); ?></button></a>
-														<?php
-														}
-														}
-														?>
-														<?php } ?>
-														<a href="<?php the_permalink() ?>">
-														<p>
-														  <?php the_title(); ?>
-														</p>
-                                                        </a>
-														<?php
-														if(  'yes' == $settings['deen_show_read_more_btn']){
-														?>
-														<a href="<?php the_permalink(); ?>" class="deen-comment-btn pl-20 pr-20 mt-25">
-														   <?php if($settings['deen_show_comments_number'] == 'yes'){ ?>
-															<i class="fas fa-comment-dots danger-text"></i>
-															<?php } ?>
-															<span><?php echo esc_html($settings['deen_read_more_btn_title']); ?></span>
-														</a>
-														<?php
-														}
-														?>
-													</div>
-												</div>
-												</div>
-                                                 <?php
-													}
-													wp_reset_query()
-												 ?>
-										</div>
-										<nav class="elementor-pagination" role="navigation" aria-label="Pagination">
-											<?php
-												if($settings['deen_pagination_style'] == 'prev_next'){
-												previous_posts_link( esc_html($prevText) ); next_posts_link( esc_html($nextText) , $query->max_num_pages );
-												}elseif($settings['deen_pagination_style'] == 'num_prev_next'){
-												echo wp_kses( paginate_links( array(
-													'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-													'total'        => $query->max_num_pages,
-													'current'      => max( 1, get_query_var( 'paged' ) ),
-													'format'       => '?paged=%#%',
-													'show_all'     => false,
-													'type'         => 'plain',
-													'end_size'     => 2,
-													'mid_size'     => 1,
-													'prev_next'    => true,
-													'prev_text'    => sprintf( '<i></i> %1$s', esc_html($prevText ) ),
-													'next_text'    => sprintf( '%1$s <i></i>', esc_html($nextText ) ),
-													'add_args'     => false,
-													'add_fragment' => '',
-												) ), $this->deen_allowed_tags() );
-												}elseif($settings['deen_pagination_style'] == 'num'){
-													echo wp_kses( paginate_links( array(
-														'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-														'total'        => $query->max_num_pages,
-														'current'      => max( 1, get_query_var( 'paged' ) ),
-														'format'       => '?paged=%#%',
-														'show_all'     => true,
-														'type'         => 'plain',
-														'end_size'     => 2,
-														'mid_size'     => 1,
-														'add_args'     => false,
-														'add_fragment' => '',
-														'prev_next'    => false,
-													) ), $this->deen_allowed_tags() );
-											}
-											?>
-                                         </nav>
-									</div>
-                                    <?php 
-                                     if($settings['deen_gallery_post_tab_get_from'] == 'cat'){
-									?>
-									<?php
-									$gallery_post_category = $settings['deen_query_using_cat_name'];
-									foreach($gallery_post_category as $gallery_post_categories){
-									?>
-									<div id="<?php echo esc_attr($gallery_post_categories); ?>" class="deen-tabcontent3" style="display:none;">
-										<div class="deen-gallery-cards">
-                                                 <?php
-												  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-												  $args = array(
-													'posts_per_page' => $settings['deen_post_per_page'],
-													'order'=> $settings['deen_post_qeury_order'],
-													'orderby'=> $settings['deen_post_qeury_order_by'],
-													'cat'=> $gallery_post_categories,
-													'paged'=>$paged
-													);
-													$query = new WP_query($args);
-													while ( $query->have_posts() ) {
-													$query->the_post();
-						                          
-												 ?>
-												<div class="deen-gallery-card ">
-												<div class="deen-card-container">
-													<div class="deen-gallery-card-img">
-													<?php
-														if(!has_post_thumbnail()){
-														?>
-														<img src="<?php echo esc_url( plugins_url( '../../assets/img/placeholder.png', __FILE__ )) ; ?>" alt="Gallery Image">
-														<?php
-														}else{
-														 the_post_thumbnail();
-														}
-													?>
-													</div>
-													<div class="deen-gallery-content">
-													<?php if("yes" == $settings['deen_show_tag'] && !empty($settings['deen_query_using_cat_name']) ) : ?> 
-													<a href="<?php echo esc_url(get_category_link(get_cat_ID(get_term($gallery_post_categories)->name))); ?>">
-													<button class="deen-primary-btn"> 
-													<?php echo esc_html(get_term($gallery_post_categories)->name); ?>
-													</button>
-													</a>
-													<?php endif; ?>
-													<a href="<?php the_permalink() ?>">
-														<p>
-														  <?php the_title(); ?>
-														</p>
-                                                        </a>
-
-														<?php
-														if(  'yes' == $settings['deen_show_read_more_btn']){
-														?>
-														<a href="<?php the_permalink(); ?>" class="deen-comment-btn pl-20 pr-20 mt-25">
-														    <?php if($settings['deen_show_comments_number'] == 'yes'){ ?>
-															<i class="fas fa-comment-dots danger-text"></i>
-															<?php } ?>
-															<span><?php echo esc_html($settings['deen_read_more_btn_title']); ?></span>
-														</a>
-														<?php
-														}
-														?>
-													</div>
-												</div>
-												</div>
-                                                 <?php
-													}
-													wp_reset_query()
-												 ?>
-										</div>
-										<nav class="elementor-pagination" role="navigation" aria-label="Pagination">
-											<?php
-												if($settings['deen_pagination_style'] == 'prev_next'){
-												previous_posts_link( esc_html($prevText) ); next_posts_link( esc_html($nextText) , $query->max_num_pages );
-												}elseif($settings['deen_pagination_style'] == 'num_prev_next'){
-												echo wp_kses( paginate_links( array(
-													'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-													'total'        => $query->max_num_pages,
-													'current'      => max( 1, get_query_var( 'paged' ) ),
-													'format'       => '?paged=%#%',
-													'show_all'     => false,
-													'type'         => 'plain',
-													'end_size'     => 2,
-													'mid_size'     => 1,
-													'prev_next'    => true,
-													'prev_text'    => sprintf( '<i></i> %1$s', esc_html($prevText ) ),
-													'next_text'    => sprintf( '%1$s <i></i>', esc_html($nextText ) ),
-													'add_args'     => false,
-													'add_fragment' => '',
-												) ), $this->deen_allowed_tags() );
-												}elseif($settings['deen_pagination_style'] == 'num'){
-													echo wp_kses( paginate_links( array(
-														'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-														'total'        => $query->max_num_pages,
-														'current'      => max( 1, get_query_var( 'paged' ) ),
-														'format'       => '?paged=%#%',
-														'show_all'     => true,
-														'type'         => 'plain',
-														'end_size'     => 2,
-														'mid_size'     => 1,
-														'add_args'     => false,
-														'add_fragment' => '',
-														'prev_next'    => false,
-													) ), $this->deen_allowed_tags() );
-											}
-											?>
-                                         </nav>
-									</div>
-                                    <?php
-									 }
-									?>
-									
-                                    <?php
-									}else{
-									?>
-									<?php
-									$gallery_post_tags = $settings['deen_query_using_tag_name'];
-									foreach($gallery_post_tags as $gallery_post_tag){
-									?>
-
-									<div id="<?php echo esc_attr($gallery_post_tag); ?>" class="deen-tabcontent3" >
-										<div class="gallery-cards ">
-                                                 <?php
-												  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-												  $args = array(
-													'posts_per_page' => $settings['deen_post_per_page'],
-													'order'=> $settings['deen_post_qeury_order'],
-													'orderby'=> $settings['deen_post_qeury_order_by'],
-													'tag__in'=>$gallery_post_tag,
-													'paged' => $paged
-													);
-													$query = new WP_query($args);
-													while ( $query->have_posts() ) {
-													$query->the_post();
-													$tags = get_the_tags();
-													$tag = $tags[mt_rand(0, count($tags)-1)];
-													$taglink = get_tag_link($tag);
-												 ?>
-												<div class="deen-gallery-card">
-												<div class="deen-card-container">
-													<div class="deen-gallery-card-img">
-														<?php
-														if(!has_post_thumbnail()){
-														?>
-														<img src="<?php echo esc_url( plugins_url( '../../assets/img/placeholder.png', __FILE__ )) ; ?>" alt="Gallery Image">
-														<?php
-														}else{
-														 the_post_thumbnail();
-														}
-														?>
-													</div>
-													<div class="deen-gallery-content">
-													<?php if( "yes" == $settings['deen_show_tag'] && !empty($settings['deen_query_using_tag_name'])  ){ ?> 
-														<a href="<?php echo esc_url(get_category_link(get_cat_ID(get_term($gallery_post_tag)->name))); ?>"><button class="deen-primary-btn"> <?php echo esc_html(get_term($gallery_post_tag)->name); ?> </button></a>
-													<?php } ?>
-													<a href="<?php the_permalink() ?>">
-														<p>
-														  <?php the_title(); ?>
-														</p>
-                                                        </a>
-
-														<?php
-														if(  'yes' == $settings['deen_show_read_more_btn']){
-														?>
-														<a href="<?php the_permalink(); ?>" class="deen-comment-btn pl-20 pr-20 mt-25">
-														    <?php if($settings['deen_show_comments_number'] == 'yes'){ ?>
-															<i class="fas fa-comment-dots danger-text"></i>
-															<?php } ?>
-															<span><?php echo esc_html($settings['deen_read_more_btn_title']); ?></span>
-														</a>
-														<?php
-														}
-														?>
-													</div>
-												</div>
-												</div>
-                                                 <?php
-													}
-													wp_reset_query()
-												 ?>
-										</div>
-										<nav class="elementor-pagination" role="navigation" aria-label="Pagination">
-											<?php
-												if($settings['deen_pagination_style'] == 'prev_next'){
-												previous_posts_link(esc_html($prevText )); next_posts_link( esc_html($nextText) , $query->max_num_pages );
-												}elseif($settings['deen_pagination_style'] == 'num_prev_next'){
-												echo wp_kses( paginate_links( array(
-													'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-													'total'        => $query->max_num_pages,
-													'current'      => max( 1, get_query_var( 'paged' ) ),
-													'format'       => '?paged=%#%',
-													'show_all'     => false,
-													'type'         => 'plain',
-													'end_size'     => 2,
-													'mid_size'     => 1,
-													'prev_next'    => true,
-													'prev_text'    => sprintf( '<i></i> %1$s', esc_html($prevText) ),
-													'next_text'    => sprintf( '%1$s <i></i>', esc_html($nextText) ),
-													'add_args'     => false,
-													'add_fragment' => '',
-												) ), $this->deen_allowed_tags() );
-												}elseif($settings['deen_pagination_style'] == 'num'){
-													echo wp_kses (paginate_links( array(
-														'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-														'total'        => $query->max_num_pages,
-														'current'      => max( 1, get_query_var( 'paged' ) ),
-														'format'       => '?paged=%#%',
-														'show_all'     => true,
-														'type'         => 'plain',
-														'end_size'     => 2,
-														'mid_size'     => 1,
-														'add_args'     => false,
-														'add_fragment' => '',
-														'prev_next'    => false,
-												) ), $this->deen_allowed_tags() );
-											}
-											?>
-                                         </nav>
-									</div>
-                                    <?php
-								 }
-							  ?>
-						<?php
-					}
-				 ?>
-			</div>
-	 </div>
- <?php
-  }
+ }
  }
  }

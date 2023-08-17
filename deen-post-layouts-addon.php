@@ -2,11 +2,12 @@
 /**
  * Plugin Name: Deen Post Layouts Addon For Elementor
  * Description: Create an appealing blog layout using creative styles. Filter your blog posts and showcases to suit your needs.
- * Version: 1.0.1
+ * Version: 1.0.3
  * Requires at least: 5.2
  * Requires PHP: 7.2
  * Elementor tested up to: 3.8.0
  * Author: Debuggers Studio
+ * Author URI: https://debuggersstudio.com/
  * Text Domain: deen-post-layouts-addon
  * Domain Path: /languages
  */

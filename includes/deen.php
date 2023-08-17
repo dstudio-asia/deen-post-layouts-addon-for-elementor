@@ -8,7 +8,7 @@ final class DeenPostLayout {
 	 * @since 1.0.0
 	 * @var string The addon version.
 	 */
-	const VERSION = '1.0.1';
+	const VERSION = '1.0.3';
 
 	/**
 	 * Minimum Elementor Version
