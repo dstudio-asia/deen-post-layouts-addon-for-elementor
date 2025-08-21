@@ -4,3 +4,6 @@
 .github
 
 README.md
+.wordpress-org
+node_modules
+vendor
