@@ -52,7 +52,6 @@ Absolutely! It will work with any theme where Elementor works.
 2. Left Posts Image Layout
 3. No Image Posts Layout
 4. Single Column Posts Layout
-5. Single Post Layout
 == Changelog ==
 
 = 1.0.4  
