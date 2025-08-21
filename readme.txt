@@ -3,9 +3,9 @@
 Contributors: debuggersstudio
 Tags:  elementor addons, elementor widget, post layouts, post blocks, post grid
 Requires at least: 5.9.0
-Tested up to: 6.2
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.0.3
+Stable tag: 1.0.5
 License: GPLv3
 License URI: https://opensource.org/licenses/GPL-3.0
 
@@ -53,7 +53,11 @@ Absolutely! It will work with any theme where Elementor works.
 3. No Image Posts Layout
 4. Single Column Posts Layout
 
-== Changelog ==  
+== Changelog ==
+
+= 1.0.4  
+- Rename widget get name
+- Compitable with current WordPress and Elementor version
 
 = 1.0.3
 - Fix variables name and code indentation

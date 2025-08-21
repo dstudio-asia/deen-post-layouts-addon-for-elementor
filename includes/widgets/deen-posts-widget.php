@@ -24,7 +24,7 @@
 class Deen_Post_Layouts extends \Elementor\Widget_Base {
 
 public function get_name() {
-    return 'postsWidget';
+    return 'deenPostsWidget';
 }
 
 public function get_title() {
@@ -145,6 +145,18 @@ protected function register_controls() {
 		]
 	);
 
+	$this->add_control(
+		'deen_post_per_page',
+		[
+			'label' => esc_html__('Posts Per Page', 'deen-post-layouts-addon'),
+			'type' => Controls_Manager::NUMBER,
+			'min' => 1,
+			'max' => 100,
+			'step' => 1,
+			'default' => 6,
+		]
+	);
+
    $this->add_control(
 			'deen_post_style',
 			[
@@ -203,18 +215,6 @@ protected function register_controls() {
 					],
 				],
 			],
-		]
-	);
-	
-	$this->add_control(
-		'deen_post_per_page',
-		[
-			'label' => esc_html__( 'Posts Per Page', 'deen-post-layouts-addon' ),
-			'type' => Controls_Manager::NUMBER,
-			'min' => 1,
-			'max' => 100,
-			'step' => 1,
-			'default' => 6,
 		]
 	);
 
