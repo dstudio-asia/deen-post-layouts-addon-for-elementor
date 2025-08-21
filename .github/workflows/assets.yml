@@ -11,8 +11,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Assets Update
         id: assets
-        with:
-          assets_dir: 'assets'
         uses: 10up/action-wordpress-plugin-asset-update@stable
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
