@@ -21,4 +21,4 @@ jobs:
           SLUG: deen-post-layouts-addon-for-elementor
           ASSETS_DIR: .wordpress-org
           IGNORE_OTHER_FILES: "true" 
-          README_NAME: readme.txt
+
